@@ -1,0 +1,162 @@
+{
+  "info": {
+    "name": "CoinGeckoController API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "fxTrade2_Get All Currencies",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8992/api/currencies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8992",
+          "path": [
+            "api",
+            "currencies"
+          ]
+        }
+      }
+    },
+    {
+      "name": "fxTrade2_Get Currency by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8992/api/currencies/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8992",
+          "path": [
+            "api",
+            "currencies",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "fxTrade2_Create Currency",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"USD\",\n  \"name\": \"US Dollar\",\n  \"exchangeRate\": 1.0\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8992/api/currencies",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8992",
+          "path": [
+            "api",
+            "currencies"
+          ]
+        }
+      }
+    },
+    {
+      "name": "fxTrade2_Update Currency",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"code\": \"EUR\",\n  \"name\": \"Euro\",\n  \"exchangeRate\": 0.85\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8992/api/currencies/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8992",
+          "path": [
+            "api",
+            "currencies",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "fxTrade2_Delete Currency",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8992/api/currencies/:id",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8992",
+          "path": [
+            "api",
+            "currencies",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "1"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "fxTrade2_Update Currencies from CoinGecko",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8992/api/currencies/update-from-coingecko",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8992",
+          "path": [
+            "api",
+            "currencies",
+            "update-from-coingecko"
+          ]
+        }
+      }
+    }
+  ]
+}
