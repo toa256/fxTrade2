@@ -23,16 +23,24 @@ public class CoinGeckoService {
      * @return список валют
      */
     public List<Currency> getCurrenciesFromCoinGecko() {
-        String url = apiUrl + "/coins/markets?vs_currency=usd";
+        try {
+            String url = apiUrl + "/coins/markets?vs_currency=usd";
+            CoinGeckoCurrency[] response = restTemplate.getForObject(url, CoinGeckoCurrency[].class);
 
-        // Выполнение запроса
-        CoinGeckoCurrency[] response = restTemplate.getForObject(url, CoinGeckoCurrency[].class);
+            if (response == null || response.length == 0) {
+                throw new RuntimeException("Empty response from CoinGecko API");
+            }
 
-        // Преобразование ответа в List<Currency>
-        return response != null ?
-                List.of(response).stream().map(this::convertToCurrency).collect(Collectors.toList()) :
-                List.of();
+            return List.of(response).stream()
+                    .map(this::convertToCurrency)
+                    .collect(Collectors.toList());
+        } catch (Exception e) {
+            // Логирование ошибки
+            System.err.println("Error fetching data from CoinGecko: " + e.getMessage());
+            return List.of(); // Возвращаем пустой список при ошибке
+        }
     }
+
 
     /**
      * Преобразование данных CoinGecko в объект Currency
