@@ -1,6 +1,6 @@
 {
   "info": {
-    "name": "CoinGeckoController API",
+    "name": "FxTrade2_CoinGeckoController API",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
@@ -10,7 +10,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8992/api/currencies",
+          "raw": "http://localhost:8080/api/currencies",
           "protocol": "http",
           "host": [
             "localhost"
@@ -29,7 +29,7 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:8992/api/currencies/:id",
+          "raw": "http://localhost:8080/api/currencies/:id",
           "protocol": "http",
           "host": [
             "localhost"
@@ -64,7 +64,7 @@
           "raw": "{\n  \"code\": \"USD\",\n  \"name\": \"US Dollar\",\n  \"exchangeRate\": 1.0\n}"
         },
         "url": {
-          "raw": "http://localhost:8992/api/currencies",
+          "raw": "http://localhost:8080/api/currencies",
           "protocol": "http",
           "host": [
             "localhost"
@@ -92,7 +92,7 @@
           "raw": "{\n  \"code\": \"EUR\",\n  \"name\": \"Euro\",\n  \"exchangeRate\": 0.85\n}"
         },
         "url": {
-          "raw": "http://localhost:8992/api/currencies/:id",
+          "raw": "http://localhost:8080/api/currencies/:id",
           "protocol": "http",
           "host": [
             "localhost"
@@ -118,7 +118,7 @@
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost:8992/api/currencies/:id",
+          "raw": "http://localhost:8080/api/currencies/:id",
           "protocol": "http",
           "host": [
             "localhost"
@@ -144,7 +144,7 @@
         "method": "POST",
         "header": [],
         "url": {
-          "raw": "http://localhost:8992/api/currencies/update-from-coingecko",
+          "raw": "http://localhost:8080/api/currencies/update-from-coingecko",
           "protocol": "http",
           "host": [
             "localhost"

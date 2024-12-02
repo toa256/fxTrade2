@@ -13,7 +13,7 @@ public class Currency {
     private Long id;
     private String code;
     private String name;
-    private Double exchageRate;
+    private Double exchangeRate;
 
     public Long getId() { return id; }
 
@@ -27,7 +27,7 @@ public class Currency {
 
     public void setName(String name) { this.name = name; }
 
-    public Double getExchangeRate() { return exchageRate; }
+    public Double getExchangeRate() { return exchangeRate; }
 
-    public void setExchangeRate(Double exchageRate) { this.exchageRate = exchageRate; }
+    public void setExchangeRate(Double exchageRate) { this.exchangeRate = exchageRate; }
 }
